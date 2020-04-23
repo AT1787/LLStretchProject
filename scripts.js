@@ -9,7 +9,23 @@ $( document ).ready(function() {
     })
  
 
-$.drawBarChart = function (element) {
+$.drawBarChart = function (data, element) {
+
+let biggestNum = Math.max.apply(Math, data)
+let yAxisCeiling = 100
+let yAxisMid = 50
+let barPositioning = 100
+if (biggestNum > 100) {
+    yAxisCeiling = (biggestNum + 100) 
+    yAxisMid = yAxisCeiling * 0.5
+} else {
+    barPositioning = barPositioning - data
+}
+
+data.forEach(function (element, i, array) {
+   
+
+})
 
 let chartSpace = $('<div>').appendTo(element);
 let chart= $('<div>').appendTo(chartSpace);
@@ -20,13 +36,15 @@ let sideTitle = $('<p>').appendTo(chart);
 let interval1 = $('<p>').appendTo(chart);
 let interval2 = $('<p>').appendTo(chart);
 let interval3 = $('<p>').appendTo(chart);
+let barLabel = $('<p>').appendTo(bars);
 
 upperTitle.text("Chocolate Bars Eaten During Compass Prep");
 lowerTitle.text("Brand")
 sideTitle.text("Amount") 
 interval1.text("0")
-interval2.text("50")
-interval3.text("100")
+interval2.text(yAxisMid.toFixed().toString())
+interval3.text(yAxisCeiling.toString())
+barLabel.text ("Hershey")
 
 chartSpace.css ({
     "position": "relative",
@@ -50,14 +68,19 @@ chart.css ({
 
 bars.css ({
     "position": "absolute",
-    "left": "15%",
-    "top": "50%",
+    "left": "5%",
+    "top": barPositioning.toString() + '%',
     "width": "15%",
-    "height": "50%",
+    "height": data[0].toString() + '%',
     "background-color": '#cc6699',
+    "font-size": "15px",
+    "color":"#FFFFFF",
+    "font-family":  "Helvetica",
 })
 
 upperTitle.css ({
+    "position": "relative",
+    "top": "-15%",
     "font-family":  "Helvetica",
     "color":"#000000",
     "font-size": "15px",
@@ -89,7 +112,7 @@ interval1.css ({
     "right": "55%",
     "font-family":  "Helvetica",
     "color":"#000000",
-    "font-size": "10px",
+    "font-size": "15px",
 })
 
 interval2.css ({
@@ -98,7 +121,7 @@ interval2.css ({
     "right": "55%",
     "font-family":  "Helvetica",
     "color":"#000000",
-    "font-size": "10px",
+    "font-size": "15px",
 })
 
 interval3.css ({
@@ -107,15 +130,21 @@ interval3.css ({
     "right": "55%",
     "font-family":  "Helvetica",
     "color":"#000000",
-    "font-size": "10px",
+    "font-size": "15px",
 })
 
-
+barLabel.css ({
+    "position": "relative",
+    "top": "100%",
+    "font-family":  "Helvetica",
+    "color":"#000000",
+    "font-size": "15px",
+})
 
 }
 
 
-$.drawBarChart("#barchart")
+$.drawBarChart([30],"#barchart")
 
 })
 

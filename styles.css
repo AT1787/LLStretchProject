@@ -1,0 +1,14 @@
+html {
+    background-color:hsl(0, 0%, 100%);  
+}
+
+header {
+    background-color:#267b9c;
+    padding-top: 20px;
+    font-family:  Helvetica;
+    color:#FFFFFF;
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 40px;
+}
+

@@ -135,14 +135,14 @@ The amount of resources I used in the short period of time were extensive and I'
 https://learn.jquery.com/  
 http://jqfundamentals.com/chapter/jquery-basics  
 https://www.youtube.com/watch?v=hMxGhHNOkCU  
-https://www.codecademy.com/learn/learn-jquery (paid account required) 
+https://www.codecademy.com/learn/learn-jquery (paid account required  
 https://www.taniarascia.com/how-to-connect-to-an-api-with-javascript/  
 https://www.digitalocean.com/community/tutorials/introduction-to-the-dom  
 https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction  
 
 - Building HTML/CSS
 
-https://learn.shayhowe.com/html-css/building-your-first-web-page/
+https://learn.shayhowe.com/html-css/building-your-first-web-page/  
 https://www.w3schools.com/ (used in various capacities throughout the development)  
 https://www.codecademy.com/learn/paths/web-development (paid account required)  
 
@@ -151,7 +151,7 @@ https://www.codecademy.com/learn/paths/web-development (paid account required)
 https://jqueryui.com/slider/  
 https://www.learnhowtoprogram.com/java-old-reference-only/web-applications-in-java/objects-in-objects-089fbf9f-7b27-4693-8b7b-10f7adebf74b  
 https://www.smashingmagazine.com/2009/08/50-useful-new-jquery-techniques/  
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max  (MDN was used extensively in this development)  
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max  (MDN was used extensively)  
 
 
 

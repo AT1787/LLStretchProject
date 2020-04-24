@@ -21,9 +21,9 @@ let barPositioning = 100
 
 let chartSpace = $('<div>').appendTo(element);
 let chart= $('<div>').appendTo(chartSpace);
-let upperTitle = $('<p>').appendTo(chart);
-let lowerTitle = $('<p>').appendTo(chart);
-let sideTitle = $('<p>').appendTo(chart);
+let upperTitle = $('<p id=mainTitle>').appendTo(chart);
+let lowerTitle = $('<p id=xAxisTitle>').appendTo(chart);
+let sideTitle = $('<p id=yAxisTitle>').appendTo(chart);
 let interval1 = $('<p>').appendTo(chart);
 let interval2 = $('<p>').appendTo(chart);
 let interval3 = $('<p>').appendTo(chart);
@@ -37,8 +37,9 @@ for (let i = 0; i < data.length; i = i + 2) {
         "top": String(100 - data[i]) + '%',
         "width": "15%",
     }).text(data[i])
-    
+
     barYPosition = barYPosition + barYInterval
+
     $('<p>').appendTo('#'+ String(i)).css ({
         "position": "relative",
         "top": "100%",
@@ -49,14 +50,12 @@ for (let i = 0; i < data.length; i = i + 2) {
 }
 
 
-
-
-upperTitle.text("Chocolate Bars Eaten During Compass Prep");
-lowerTitle.text("Brand")
-sideTitle.text("Amount") 
+$("#mainTitle").text("Chocolate Bars Eaten During Compass Prep");
+$("#xAxisTitle").text("Brand")
+$("#yAxisTitle").text("Amount") 
 interval1.text("0")
-interval2.text(String(yAxisCeiling))
-interval3.text(String(yAxisCeiling))
+interval2.text("50")
+interval3.text("100")
 
 chartSpace.css ({
     "position": "relative",
@@ -150,6 +149,14 @@ barLabel.css ({
 
 
 }
+
+
+
+
+
+
+
+
 
 
 $.drawBarChart([20,'Hershey', 50,'KitKat', 70, 'M&Ms'],"#barchart")

@@ -1,5 +1,5 @@
 # The LightHouse Bar Graph Stretch Project  
-### Submitted by: Andrew Trac, Incoming April 27 2020 Webd Development Cohort
+### Submitted by: Andrew Trac, Incoming April 27 2020 Web Development Cohort
 ### Date April 24 2020
 
 1. About  return

@@ -2,21 +2,21 @@
 ### Submitted by: Andrew Trac, Incoming April 27 2020 Webd Development Cohort
 ### Date April 24 2020
 
-1. About
-    1.1 Context of the Project
-    1.2 Example Screenshots
+1. About  return
+    1.1 Context of the Project  return
+    1.2 Example Screenshots  return
 
-2. API Functionality
-    2.1 Description of Functions
-    2.2 Feature list of your library (options it supports, etc)
+2. API Functionality  return
+    2.1 Description of Functions  return
+    2.2 Feature list of your library (options it supports, etc)  return
 
-3. Bugs and Not Supported Features
-    3.1 Known issues and bugs
-    3.2 Features not supported
+3. Bugs and Not Supported Features  return
+    3.1 Known issues and bugs  return
+    3.2 Features not supported  return
 
-4. List of External Resources Used
-
-### 1. About
+4. List of External Resources Used  return
+  return
+### 1. About  return
 
 Hi there. I am an incoming LHL Web Development student that took this Stretch Project challenge. Prior to challenge, the extent of my learning was HTML/CSS introductory online courses on CourseAcademy (approx 15 hours, prior to LHL), and the Lighthouse Compass prep module, including all stretch material up until this point. I had no prior knowledge of jQuery, and very little understanding of javascript/HTML interaction, aside from what was covered in the Compass module. 
 

@@ -15,36 +15,48 @@ let biggestNum = Math.max.apply(Math, data)
 let yAxisCeiling = 100
 let yAxisMid = 50
 let barPositioning = 100
-if (biggestNum > 100) {
-    yAxisCeiling = (biggestNum + 100) 
-    yAxisMid = yAxisCeiling * 0.5
-} else {
-    barPositioning = barPositioning - data
-}
 
-data.forEach(function (element, i, array) {
-   
 
-})
+
 
 let chartSpace = $('<div>').appendTo(element);
 let chart= $('<div>').appendTo(chartSpace);
-let bars = $('<div>').appendTo(chart);
 let upperTitle = $('<p>').appendTo(chart);
 let lowerTitle = $('<p>').appendTo(chart);
 let sideTitle = $('<p>').appendTo(chart);
 let interval1 = $('<p>').appendTo(chart);
 let interval2 = $('<p>').appendTo(chart);
 let interval3 = $('<p>').appendTo(chart);
-let barLabel = $('<p>').appendTo(bars);
+let barYPosition = 5
+let barYInterval = 30
+
+for (let i = 0; i < data.length; i = i + 2) {
+    $('<div class=bars id=' + String(i) + '>').appendTo(chart).css ({
+        "left": String(barYPosition) + '%',
+        "height": String(data[i]) + '%',
+        "top": String(100 - data[i]) + '%',
+        "width": "15%",
+    }).text(data[i])
+    
+    barYPosition = barYPosition + barYInterval
+    $('<p>').appendTo('#'+ String(i)).css ({
+        "position": "relative",
+        "top": "100%",
+        "font-family":  "Helvetica",
+        "color":"#000000",
+        "font-size": "15px",
+    }).text(data[i+1])
+}
+
+
+
 
 upperTitle.text("Chocolate Bars Eaten During Compass Prep");
 lowerTitle.text("Brand")
 sideTitle.text("Amount") 
 interval1.text("0")
-interval2.text(yAxisMid.toFixed().toString())
-interval3.text(yAxisCeiling.toString())
-barLabel.text ("Hershey")
+interval2.text(String(yAxisCeiling))
+interval3.text(String(yAxisCeiling))
 
 chartSpace.css ({
     "position": "relative",
@@ -66,16 +78,13 @@ chart.css ({
     'text-align': 'center'
 })
 
-bars.css ({
+$( '.bars' ).css ({
     "position": "absolute",
-    "left": "5%",
-    "top": barPositioning.toString() + '%',
-    "width": "15%",
-    "height": data[0].toString() + '%',
     "background-color": '#cc6699',
     "font-size": "15px",
     "color":"#FFFFFF",
     "font-family":  "Helvetica",
+    "width": "15%",
 })
 
 upperTitle.css ({
@@ -134,19 +143,15 @@ interval3.css ({
 })
 
 barLabel.css ({
-    "position": "relative",
-    "top": "100%",
-    "font-family":  "Helvetica",
-    "color":"#000000",
-    "font-size": "15px",
+   
 })
+
+
+
 
 }
 
 
-$.drawBarChart([30],"#barchart")
+$.drawBarChart([20,'Hershey', 50,'KitKat', 70, 'M&Ms'],"#barchart")
 
 })
-
-
-

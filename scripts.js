@@ -11,27 +11,20 @@ $( document ).ready(function() {
 
 $.drawBarChart = function (data, element) {
 
-let biggestNum = Math.max.apply(Math, data)
-let yAxisCeiling = 100
-let yAxisMid = 50
-let barPositioning = 100
 
-
-
-
-let chartSpace = $('<div>').appendTo(element);
-let chart= $('<div>').appendTo(chartSpace);
-let upperTitle = $('<p id=mainTitle>').appendTo(chart);
-let lowerTitle = $('<p id=xAxisTitle>').appendTo(chart);
-let sideTitle = $('<p id=yAxisTitle>').appendTo(chart);
-let interval1 = $('<p>').appendTo(chart);
-let interval2 = $('<p>').appendTo(chart);
-let interval3 = $('<p>').appendTo(chart);
+$('<div id=chartSpace>').appendTo(element);
+$('<div id=chart>').appendTo('#chartSpace');
+$('<p class=titles id=mainTitle>').appendTo( '#chart');
+$('<p class=titles id=xAxisTitle>').appendTo('#chart');
+$('<p class=titles id=yAxisTitle>').appendTo('#chart');
+$('<p class=yAxisTitle id=yAxis0>').appendTo('#chart');
+$('<p class=yAxisTitle id=yAxisMid>').appendTo('#chart');
+$('<p class=yAxisTitle id=yAxisMax>').appendTo('#chart');
 let barYPosition = 5
 let barYInterval = 30
 
 for (let i = 0; i < data.length; i = i + 2) {
-    $('<div class=bars id=' + String(i) + '>').appendTo(chart).css ({
+    $('<div class=bars id=' + String(i) + '>').appendTo('#chart').css ({
         "left": String(barYPosition) + '%',
         "height": String(data[i]) + '%',
         "top": String(100 - data[i]) + '%',
@@ -53,11 +46,11 @@ for (let i = 0; i < data.length; i = i + 2) {
 $("#mainTitle").text("Chocolate Bars Eaten During Compass Prep");
 $("#xAxisTitle").text("Brand")
 $("#yAxisTitle").text("Amount") 
-interval1.text("0")
-interval2.text("50")
-interval3.text("100")
+$("#yAxis0").text("0")
+$("#yAxisMid").text("50")
+$("#yAxisMax").text("100")
 
-chartSpace.css ({
+$('#chartSpace').css ({
     "position": "relative",
     "margin": "10%",
     "background-color": "#FFFFFF",
@@ -66,7 +59,7 @@ chartSpace.css ({
     'border-style': 'solid',
 });
 
-chart.css ({
+$ ( '#chart' ).css ({
     "position": "relative",
     "margin": "15%",
     "background-color": "#FFFFFFF",
@@ -86,35 +79,32 @@ $( '.bars' ).css ({
     "width": "15%",
 })
 
-upperTitle.css ({
+$('#mainTitle').css ({
     "position": "relative",
     "top": "-15%",
     "font-family":  "Helvetica",
-    "color":"#000000",
     "font-size": "15px",
     "text-align": "center"
 })
 
-lowerTitle.css ({
+$('#xAxisTitle').css ({
     "position": "relative",
     "top": "105%",
     "font-family":  "Helvetica",
-    "color":"#000000",
     "font-size": "15px",
 })
 
-sideTitle.css ({
+$('#yAxisTitle').css ({
     "position": "relative",
     "top": "40%",
     "right": "65%",
     "font-family":  "Helvetica",
-    "color":"#000000",
     "font-size": "15px",
     "transform": "rotate(-90deg)",
 })
 
 
-interval1.css ({
+$( '#yAxis0').css ({
     "position": "relative",
     "top": "80%",
     "right": "55%",
@@ -123,7 +113,7 @@ interval1.css ({
     "font-size": "15px",
 })
 
-interval2.css ({
+$( '#yAxisMid' ).css ({
     "position": "relative",
     "top": "25%",
     "right": "55%",
@@ -132,7 +122,7 @@ interval2.css ({
     "font-size": "15px",
 })
 
-interval3.css ({
+$( '#yAxisMax' ).css ({
     "position": "relative",
     "top": "-30%",
     "right": "55%",
@@ -140,25 +130,14 @@ interval3.css ({
     "color":"#000000",
     "font-size": "15px",
 })
-
-barLabel.css ({
-   
+$( '.titles' ).css ({
+    "color": '#000000'
 })
-
-
-
 
 }
 
 
 
-
-
-
-
-
-
-
-$.drawBarChart([20,'Hershey', 50,'KitKat', 70, 'M&Ms'],"#barchart")
+$.drawBarChart([20,'Hershey', 50,'KitKat', 70, 'M&Ms'], "#barchart")
 
 })
